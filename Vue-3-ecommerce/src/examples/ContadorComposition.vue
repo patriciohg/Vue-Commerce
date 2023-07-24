@@ -12,10 +12,12 @@
 </script>
 
 <template>
-    <h1>Hola Soy la version con composition API</h1>
+    <p>Objetivo: Tienes que llegar a 20 clicks </p>
     <h1>Contador: {{ count }}</h1>
 
     <button @click="aumentar">
         Incrementar contador
     </button>
+    <p v-if="count <=10">Vamos tu puedes.</p>
+    <p v-else>Ya te falta muy poco.</p>
 </template>
