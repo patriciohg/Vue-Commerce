@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { PropType } from "vue";
-    import type { Product } from "./Types";
+    import type { Product } from "../model/Types";
+    import { useCartStore } from "@/stores/cart";
     export default {
         props: {
             product : {
@@ -8,10 +9,11 @@
                 required: true
             }
         },
-        emits: ['addProduct'],
         methods: {
             onAddButtonClick(){
-                this.$emit('addProduct');
+                const carStore = useCartStore();
+                carStore.addProduct(this.product.id);
+                
             }
         }
 

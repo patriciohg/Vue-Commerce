@@ -1,7 +1,9 @@
 <script lang="ts">
-import type { CartDetail, Product } from "./Types";
+import type { CartDetail, Product } from "../model/Types";
 import ProductCard from "./ProductCard.vue";
 import Cart from "./Cart.vue";
+import { useCartStore } from "@/stores/cart";
+
 
 export default {
     components: {
@@ -14,22 +16,19 @@ export default {
                 {name: "Silla", price: 50, id: 1},
                 {name: "Monitor", price: 100, id: 2},
                 {name: "Microfono", price: 75, id: 3},
+                {name: "Mouse", price: 25, id: 4},
+                {name: "Teclado", price: 30, id: 5},
+                {name: "Laptop", price: 500, id: 6},
+                {name: "Audifonos", price: 50, id: 7},
+                {name: "Camara", price: 200, id: 8},
+                {name: "Lampara", price: 20, id: 9},
+                {name: "Mesa", price: 100, id: 10}           
 
-            ],
-            details: <Array<CartDetail>>[]
+            ]
         }
     },
     methods: {
         onAddProduct(productId: number){
-            const detailFind = this.details.find(d => d.productId === productId);
-            if(detailFind){
-                detailFind.quantity++;
-            }else{
-                this.details.push({
-                    productId,
-                    quantity: 1
-                });
-            }
             
         }
     },
@@ -39,16 +38,13 @@ export default {
 </script>
 
 <template>
-    <v-container>
+    
         <v-row>
             <v-col v-for="product in products" cols="4">
                 <ProductCard 
                     :product="product" 
-                    v-on:addProduct="onAddProduct(product.id)"
                 />
             </v-col>
         </v-row>
-
-        <Cart :details="details"/>
-    </v-container>
+    
 </template>
