@@ -22,20 +22,20 @@ import { RouterLink } from 'vue-router'
         ></v-avatar>
         
         <RouterLink to="/" v-slot="{navigate}">
-          <v-btn variant="text" @click="navigate">
+          <v-btn prepend-icon="mdi-home-variant" :active="$route.name === 'home'" variant="text" @click="navigate" size="small">
             Home
           </v-btn>
         </RouterLink>
         <RouterLink to="/cart" v-slot="{navigate}">
           <v-badge :content="itemsCount" :model-value="itemsCount > 0" color="orange-lighten-2">
-            <v-btn variant="text" @click="navigate">
+            <v-btn prepend-icon="mdi-cart" variant="text" :active="$route.name === 'cart'" @click="navigate" size="small">
               Cart
             </v-btn>
           </v-badge>
           
         </RouterLink>
         <RouterLink to="/about" v-slot="{navigate}">
-          <v-btn variant="text" @click="navigate">
+          <v-btn prepend-icon="mdi-information" variant="text" :active="$route.name === 'about'" @click="navigate" size="small">
             About
           </v-btn>
         </RouterLink>
