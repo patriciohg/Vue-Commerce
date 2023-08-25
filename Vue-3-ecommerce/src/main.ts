@@ -1,6 +1,5 @@
 //App
 import { createApp } from 'vue'
-import ProductList from './components/ProductList.vue'
 
 //Vuetify
 import 'vuetify/styles'

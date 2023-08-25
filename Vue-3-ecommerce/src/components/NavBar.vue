@@ -1,6 +1,5 @@
 <script lang="ts">
     import { useCartStore } from '@/stores/cart';
-import { RouterLink } from 'vue-router'
     export default{
         computed:{
             itemsCount(){

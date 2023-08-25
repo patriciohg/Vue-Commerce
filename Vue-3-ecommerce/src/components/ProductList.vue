@@ -1,18 +1,15 @@
 <script lang="ts">
-import type { CartDetail, Product } from "../model/Types";
+import type { Product } from "../model/Types";
 import ProductCard from "./ProductCard.vue";
-import Cart from "./Cart.vue";
-import { useCartStore } from "@/stores/cart";
 
 
 export default {
     components: {
-        ProductCard,
-        Cart
+        ProductCard
     },
     data(){
         return{
-            products: <Array<Product>>[
+            products: [
                 {name: "Silla", price: 50, id: 1},
                 {name: "Monitor", price: 100, id: 2},
                 {name: "Microfono", price: 75, id: 3},
@@ -24,13 +21,10 @@ export default {
                 {name: "Lampara", price: 20, id: 9},
                 {name: "Mesa", price: 100, id: 10}           
 
-            ]
+            ] as Product[]
         }
     },
     methods: {
-        onAddProduct(productId: number){
-            
-        }
     },
 
 }
@@ -40,7 +34,7 @@ export default {
 <template>
     
         <v-row>
-            <v-col v-for="product in products" cols="4">
+            <v-col v-for="product in products" cols="4" :key="product.id">
                 <ProductCard 
                     :product="product" 
                 />
