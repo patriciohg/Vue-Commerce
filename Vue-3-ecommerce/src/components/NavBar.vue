@@ -15,10 +15,11 @@
       <v-container class="fill-height d-flex align-center">
 
         <v-avatar
-          class="me-10 ms-4"
-          color="grey-darken-1"
-          size="32"
-        ></v-avatar>
+          class="me-10 ms-4"          
+          size="32"          
+        >
+        <v-img src="/favicon.ico" />
+        </v-avatar>
         
         <RouterLink to="/" v-slot="{navigate}">
           <v-btn prepend-icon="mdi-home-variant" :active="$route.name === 'home'" variant="text" @click="navigate" size="small">

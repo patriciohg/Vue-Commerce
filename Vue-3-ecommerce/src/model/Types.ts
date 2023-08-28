@@ -3,9 +3,16 @@ export interface Product{
     price: number;   
     image: string;
     id: number; 
+    categoryId: number;
 }
 
 export interface CartDetail{
-    productId: number;
+    product: Product;
     quantity: number;
+}
+export interface Category{
+
+    id: number;
+    name: string;
+    description: string;
 }

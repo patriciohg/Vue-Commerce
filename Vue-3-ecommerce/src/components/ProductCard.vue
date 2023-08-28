@@ -12,7 +12,7 @@
         methods: {
             onAddButtonClick(){
                 const carStore = useCartStore();
-                carStore.addProduct(this.product.id);
+                carStore.addProduct(this.product);
                 
             }
         }

@@ -5,19 +5,22 @@ export default{
     data(){
         return{
             categories: [
-            {
-                id: 1,
-                name: "Technology"
-            },
-            {
-                id: 2,
-                name: "Toys"
-            },
-            {
-                id: 3,
-                name: "Clothes"
-                
-            }
+                {
+                    id: 1,
+                    name: "Oficina",
+                    description: "Articulos para tu oficina"
+
+                },
+                {
+                    id: 2,
+                    name: "Computador",
+                    description: "Articulos para tu computador"                
+                },
+                {
+                    id: 3,
+                    name: "Casa",
+                    description: "Articulos para tu casa"
+                }
             ] as Category[]
         }
     },
