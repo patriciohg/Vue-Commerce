@@ -24,6 +24,12 @@ export default{
             ] as Category[]
         }
     },
+    methods:{
+        selectCategory(category: Category){
+            console.log(category);
+        }
+    }
+
 
 }
 </script>
@@ -35,6 +41,7 @@ export default{
             v-for="category in categories"
             :key="category.id"
             link
+            @click="selectCategory(category)"
             >
             <v-list-item-title>
                 {{ category.name }}
